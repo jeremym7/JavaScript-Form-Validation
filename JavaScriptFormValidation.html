@@ -1,0 +1,77 @@
+<!--Define document type-->
+<!DOCTYPE html>
+<html>
+
+<!--Define head-->
+<head>
+</head>
+
+<!--Define and apply style to body-->
+<style>
+body {
+  background-color: grey;
+  text-align: center; 
+  color: black;
+  font-family: Arial, Helvetica, times;
+}
+</style>
+
+<!-- Form validation -->
+<script>
+function validateForm() {
+var a = document.forms["javaForm"]["firstName"].value;
+var b = document.forms["javaForm"]["lastName"].value;
+var c = document.forms["javaForm"]["email"].value;
+
+<!-- In case a, b, and c are empty, display this message -->
+if (a == "" || b == "" || c == "") {
+alert("Complete all sections, please!");
+return false;
+}
+
+<!-- In case a does not include "@", display this message -->
+else if (!(c.includes("@"))) {
+alert("Please, enter a valid email address!");
+return false;
+}
+
+<!-- Otherwise, display this message -->
+else {
+alert("Thank you for your submission!");
+}
+}
+</script>
+
+
+<body>
+<h3 style="text-align: center;" align="center"><em>Customer Information</em></h3>
+
+<!--Start form-->
+<form name="javaForm">
+
+<!--Create text First name:-->
+First name:<br>
+
+<!--Create input box-->
+<input name="firstName" type="text" /><br><br>
+
+<!--Create text Last name:-->
+Last name:<br>
+
+<!--Create input box-->
+<input name="lastName" type="text" /><br><br>
+
+<!--Create text-->
+E-mail:<br> 
+
+<!--Create input box-->
+<input name="email" type="text" /><br><br>
+
+<!--Create submit button-->
+<button type="button" onclick="return validateForm()">Submit</button>
+
+<!--Create reset button-->
+<input class="button" type="reset" value="Reset" onclick="alert('Your information has been deleted.')" />
+</form>
+</body>
+</html>
